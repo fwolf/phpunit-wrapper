@@ -1,5 +1,5 @@
 <?php
-namespace Fwlib\Bridge;
+namespace Fwolf\Wrapper\PHPUnit;
 
 use PHPUnit_Framework_TestCase;
 use ReflectionMethod;
