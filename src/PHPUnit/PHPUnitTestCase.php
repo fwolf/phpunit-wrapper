@@ -21,29 +21,12 @@ abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
      *
      * @param   mixed   $expected
      * @param   mixed   $actual
-     * @param   string  $message
-     * @param   float   $delta
-     * @param   integer $maxDepth
-     * @param   boolean $canonicalize
-     * @param   boolean $ignoreCase
      */
-    public function assertEqualArray(
-        $expected,
-        $actual,
-        $message = '',
-        $delta = 0.0,
-        $maxDepth = 10,
-        $canonicalize = false,
-        $ignoreCase = false
-    ) {
+    public function assertEqualArray($expected, $actual)
+    {
         self::assertEquals(
             var_export($expected, true),
-            var_export($actual, true),
-            $message,
-            $delta,
-            $maxDepth,
-            $canonicalize,
-            $ignoreCase
+            var_export($actual, true)
         );
     }
 
