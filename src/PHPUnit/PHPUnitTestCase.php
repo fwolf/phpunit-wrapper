@@ -9,7 +9,7 @@ use ReflectionProperty;
  * Bridge for PHPUnit_Framework_TestCase
  *
  * @copyright   Copyright 2013-2015 Fwolf
- * @license     http://www.gnu.org/licenses/lgpl.html LGPL-3.0+
+ * @license     http://opensource.org/licenses/MIT MIT
  */
 abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
 {
