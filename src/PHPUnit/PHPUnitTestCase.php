@@ -6,7 +6,10 @@ use ReflectionMethod;
 use ReflectionProperty;
 
 /**
- * Bridge for PHPUnit_Framework_TestCase
+ * Wrapper for PHPUnit_Framework_TestCase
+ *
+ * Added some helper methods, keep tiny for easy distribute, and should only
+ * use for test propose.
  *
  * @copyright   Copyright 2013-2015 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
