@@ -1,6 +1,7 @@
 <?php
 namespace Fwolf\Wrapper\PHPUnit;
 
+use Fwolf\Wrapper\PHPUnit\Helper\BuildEasyMockTrait;
 use PHPUnit_Framework_TestCase;
 use ReflectionMethod;
 use ReflectionProperty;
@@ -16,6 +17,9 @@ use ReflectionProperty;
  */
 abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
 {
+    use BuildEasyMockTrait;
+
+
     /**
      * Asserts that two array are equal and same element sequence
      *
