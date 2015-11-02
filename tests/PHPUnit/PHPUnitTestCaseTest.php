@@ -2,8 +2,8 @@
 namespace FwolfTest\Wrapper\PHPUnit;
 
 use Fwolf\Wrapper\PHPUnit\PHPUnitTestCase;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
+use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
  * @copyright   Copyright 2015 Fwolf
@@ -12,12 +12,12 @@ use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
 class PHPUnitTestCaseTest extends PHPUnitTestCase
 {
     /**
-     * @return MockObject | PHPUnitTestCase
+     * @return MockObject|PHPUnitTestCase
      */
     protected function buildMock()
     {
         $mock = $this->getMock(
-            'Fwolf\Wrapper\PHPUnit\PHPUnitTestCase',
+            PHPUnitTestCase::class,
             null
         );
 
@@ -32,17 +32,17 @@ class PHPUnitTestCaseTest extends PHPUnitTestCase
     {
         $testCase = $this->buildMock();
 
-        $x = [
+        $ar1 = [
             'foo' => 1,
             'bar' => 2,
         ];
-        $y = [
+        $ar2 = [
             'bar' => 2,
             'foo' => 1,
         ];
-        $testCase->assertEquals($x, $y);
+        $testCase->assertEquals($ar1, $ar2);
 
-        $testCase->assertEqualArray($x, $x);
+        $testCase->assertEqualArray($ar1, $ar1);
     }
 
 
@@ -50,16 +50,16 @@ class PHPUnitTestCaseTest extends PHPUnitTestCase
     {
         $testCase = $this->buildMock();
 
-        $x = [
+        $ar1 = [
             'foo' => 1,
             'bar' => 2,
         ];
-        $y = [
+        $ar2 = [
             'bar' => 2,
             'foo' => 1,
         ];
         try {
-            $testCase->assertEqualArray($x, $y);
+            $testCase->assertEqualArray($ar1, $ar2);
 
             // No error caught means test fail
             $this->assertTrue(false);
