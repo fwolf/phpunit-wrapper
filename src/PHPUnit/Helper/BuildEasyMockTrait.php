@@ -23,9 +23,18 @@ trait BuildEasyMockTrait
      */
     public function buildEasyMock($className, array $methods = [])
     {
-        $mock = $this->getMockBuilder($className)
-            ->setMethods(empty($methods) ? null : array_keys($methods))
-            ->getMock();
+        $builder = $this->getMockBuilder($className)
+            ->setMethods(empty($methods) ? null : array_keys($methods));
+
+        // Use class name without namespace path to detect abstract or trait
+        $shortName = join('', array_slice(explode('\\', $className), -1));
+        if ('Trait' == substr($shortName, -5)) {
+            $mock = $builder->getMockForTrait();
+        } elseif ('Abstract' == substr($shortName, 0, 8)) {
+            $mock = $builder->getMockForAbstractClass();
+        } else {
+            $mock = $builder->getMock();
+        }
 
         foreach ($methods as $method => $returnValue) {
             $mock->expects($this->any())

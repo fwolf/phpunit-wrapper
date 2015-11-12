@@ -42,4 +42,24 @@ class BuildEasyMockTraitTest extends PHPUnitTestCase
 
         $this->assertNotEmpty($trait->publicMethod());
     }
+
+
+    public function testBuildEasyMockForAbstractClass()
+    {
+        $trait = $this->buildEasyMock(AbstractClassDummy::class, [
+            'get' => 42,
+        ]);
+
+        $this->assertEquals(42, $trait->get());
+    }
+
+
+    public function testBuildEasyMockForTrait()
+    {
+        $trait = $this->buildEasyMock(BuildEasyMockTrait::class, [
+            'get' => 42,
+        ]);
+
+        $this->assertEquals(42, $trait->get());
+    }
 }
