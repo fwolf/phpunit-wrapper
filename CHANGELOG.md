@@ -2,6 +2,12 @@
 
 
 
+### v1.2 (2015-11-12)
+
+- Easy mock build for abstract class or trait
+
+
+
 #### v1.1.1 (2015-11-03)
 
 - Add PHP 7 to Travis-CI config
