@@ -2,6 +2,12 @@
 
 
 
+#### v1.2.1 (2016-01-11)
+
+- Disable original constructor of mock
+
+
+
 ### v1.2 (2015-11-12)
 
 - Easy mock build for abstract class or trait
