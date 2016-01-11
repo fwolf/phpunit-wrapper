@@ -11,7 +11,7 @@ use PHPUnit_Framework_MockObject_MockObject as MockObject;
  * @method  MockBuilder getMockBuilder($className)
  * @method  static AnyInvokeCount  any()
  *
- * @copyright   Copyright 2015 Fwolf
+ * @copyright   Copyright 2015-2016 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
 trait BuildEasyMockTrait
@@ -24,7 +24,8 @@ trait BuildEasyMockTrait
     public function buildEasyMock($className, array $methods = [])
     {
         $builder = $this->getMockBuilder($className)
-            ->setMethods(empty($methods) ? null : array_keys($methods));
+            ->setMethods(empty($methods) ? null : array_keys($methods))
+            ->disableOriginalConstructor();
 
         // Use class name without namespace path to detect abstract or trait
         $shortName = join('', array_slice(explode('\\', $className), -1));
