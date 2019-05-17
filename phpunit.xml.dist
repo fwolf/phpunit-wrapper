@@ -4,21 +4,19 @@
   backupGlobals='false'
   backupStaticAttributes='false'
   beStrictAboutOutputDuringTests='true'
-  beStrictAboutTestSize='true'
   beStrictAboutTestsThatDoNotTestAnything='true'
-  bootstrap='bootstrap.php'
-  checkForUnintentionallyCoveredCode='true'
+  bootstrap='vendor/autoload.php'
   colors='true'
   convertErrorsToExceptions='true'
   convertNoticesToExceptions='true'
   convertWarningsToExceptions='true'
   forceCoversAnnotation='false'
-  mapTestClassNameToCoveredClassName='false'
   processIsolation='false'
   stopOnError='false'
   stopOnFailure='false'
   stopOnIncomplete='false'
   stopOnSkipped='false'
+  stopOnRisky="false"
   timeoutForSmallTests='10'
   timeoutForMediumTests='30'
   timeoutForLargeTests='60'
@@ -26,8 +24,8 @@
 >
 
   <testsuites>
-    <testsuite name='Fwolf Test Suite'>
-      <directory phpVersion='5.4.0' phpVersionOperator='>='
+    <testsuite name='Test Suite'>
+      <directory phpVersion='7.2' phpVersionOperator='>='
         >tests/</directory>
     </testsuite>
   </testsuites>
