@@ -11,7 +11,7 @@ use PHPUnit_Framework_MockObject_MockObject as MockObject;
  * @method  MockBuilder getMockBuilder($className)
  * @method  static AnyInvokeCount  any()
  *
- * @copyright   Copyright 2015-2016 Fwolf
+ * @copyright   Copyright 2015-2016, 2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
 trait BuildEasyMockTrait

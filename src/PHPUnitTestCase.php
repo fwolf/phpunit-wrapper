@@ -12,7 +12,7 @@ use ReflectionProperty;
  * Added some helper methods, keep tiny for easy distribute, and should only
  * use for test propose.
  *
- * @copyright   Copyright 2013-2015 Fwolf
+ * @copyright   Copyright 2013-2015, 2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
 abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase

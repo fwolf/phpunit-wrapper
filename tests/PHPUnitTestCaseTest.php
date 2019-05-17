@@ -6,7 +6,7 @@ use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 
 /**
- * @copyright   Copyright 2015 Fwolf
+ * @copyright   Copyright 2015, 2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
 class PHPUnitTestCaseTest extends PHPUnitTestCase
@@ -63,7 +63,6 @@ class PHPUnitTestCaseTest extends PHPUnitTestCase
 
             // No error caught means test fail
             $this->assertTrue(false);
-
         } catch (ExpectationFailedException $e) {
             // Caught exception means 2 array are not equal
             $this->assertTrue(true);

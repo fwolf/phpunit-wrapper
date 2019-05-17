@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Fwolf\\Wrapper\\PHPUnit\\": "src/PHPUnit/"
+            "Fwolf\\Wrapper\\PHPUnit\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FwolfTest\\Wrapper\\PHPUnit\\": "tests/PHPUnit/"
+            "FwolfTest\\Wrapper\\PHPUnit\\": "tests/"
         }
     }
 }
