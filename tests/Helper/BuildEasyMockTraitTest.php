@@ -1,26 +1,28 @@
 <?php
+
 namespace FwolfTest\Wrapper\PHPUnit\Helper;
 
 use Fwolf\Wrapper\PHPUnit\Helper\BuildEasyMockTrait;
-use Fwolf\Wrapper\PHPUnit\PHPUnitTestCase;
+use Fwolf\Wrapper\PHPUnit\TestCase;
 use FwolfTest\Wrapper\PHPUnit\PHPUnitTestCaseTestDummy;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
- * @copyright   Copyright 2015, 2019 Fwolf
+ * @copyright   Copyright 2015-2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
-class BuildEasyMockTraitTest extends PHPUnitTestCase
+class BuildEasyMockTraitTest extends TestCase
 {
     /**
-     * @param   string[] $methods
-     * @return  MockObject|BuildEasyMockTrait
+     * @param string[] $methods
+     * @return  MockObject | BuildEasyMockTrait
      */
     protected function buildMock(array $methods = null)
     {
         $mock = $this->getMockBuilder(BuildEasyMockTrait::class)
             ->setMethods($methods)
-            ->getMock();
+            ->getMockForTrait()
+        ;
 
         return $mock;
     }
@@ -29,11 +31,11 @@ class BuildEasyMockTraitTest extends PHPUnitTestCase
     public function testBuildEasyMock()
     {
         $trait = $this->buildEasyMock(PHPUnitTestCaseTestDummy::class, [
-            'publicMethod'   => 'foo',
+            'publicMethod'   => 2019,
             'notExistMethod' => 'bar',
         ]);
 
-        $this->assertEquals('foo', $trait->publicMethod());
+        $this->assertEquals(2019, $trait->publicMethod());
         $this->assertEquals('bar', $trait->notExistMethod());
 
 

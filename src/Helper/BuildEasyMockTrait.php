@@ -1,31 +1,33 @@
 <?php
+
 namespace Fwolf\Wrapper\PHPUnit\Helper;
 
-use PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount as AnyInvokeCount;
-use PHPUnit_Framework_MockObject_MockBuilder as MockBuilder;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use PHPUnit\Framework\MockObject\Matcher\AnyInvokedCount;
+use PHPUnit\Framework\MockObject\MockBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * Trait for build simple mock which change method return value
  *
  * @method  MockBuilder getMockBuilder($className)
- * @method  static AnyInvokeCount  any()
+ * @method  static AnyInvokedCount  any()
  *
- * @copyright   Copyright 2015-2016, 2019 Fwolf
+ * @copyright   Copyright 2015-2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
 trait BuildEasyMockTrait
 {
     /**
-     * @param   string   $className
-     * @param   string[] $methods {methodName: returnValue}
-     * @return  MockObject|object
+     * @param string   $className
+     * @param string[] $methods {methodName: returnValue}
+     * @return  MockObject | object
      */
     public function buildEasyMock($className, array $methods = [])
     {
         $builder = $this->getMockBuilder($className)
             ->setMethods(empty($methods) ? null : array_keys($methods))
-            ->disableOriginalConstructor();
+            ->disableOriginalConstructor()
+        ;
 
         // Use class name without namespace path to detect abstract or trait
         $shortName = join('', array_slice(explode('\\', $className), -1));
@@ -40,7 +42,8 @@ trait BuildEasyMockTrait
         foreach ($methods as $method => $returnValue) {
             $mock->expects($this->any())
                 ->method($method)
-                ->willReturn($returnValue);
+                ->willReturn($returnValue)
+            ;
         }
 
         return $mock;

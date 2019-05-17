@@ -1,4 +1,5 @@
 <?php
+
 namespace FwolfTest\Wrapper\PHPUnit;
 
 /**
@@ -13,19 +14,13 @@ class PHPUnitTestCaseTestDummy
     private static $privateStaticProperty = 2;
 
 
-    /**
-     * @return int
-     */
-    private function privateMethod()
+    private function privateMethod(): int
     {
         return $this->privateProperty + self::$privateStaticProperty;
     }
 
 
-    /**
-     * @return int
-     */
-    public function publicMethod()
+    public function publicMethod(): int
     {
         return $this->privateMethod();
     }

@@ -1,21 +1,22 @@
 <?php
+
 namespace Fwolf\Wrapper\PHPUnit;
 
 use Fwolf\Wrapper\PHPUnit\Helper\BuildEasyMockTrait;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as ParentTestCase;
 use ReflectionMethod;
 use ReflectionProperty;
 
 /**
- * Wrapper for PHPUnit_Framework_TestCase
+ * Wrapper for PHPUnit\Framework\TestCase
  *
  * Added some helper methods, keep tiny for easy distribute, and should only
  * use for test propose.
  *
- * @copyright   Copyright 2013-2015, 2019 Fwolf
+ * @copyright   Copyright 2013-2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
-abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
+abstract class TestCase extends ParentTestCase
 {
     use BuildEasyMockTrait;
 
@@ -23,8 +24,8 @@ abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
     /**
      * Asserts that two array are equal and same element sequence
      *
-     * @param   mixed $expected
-     * @param   mixed $actual
+     * @param mixed $expected
+     * @param mixed $actual
      */
     public function assertEqualArray($expected, $actual)
     {
@@ -38,9 +39,9 @@ abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
     /**
      * Call private or protected method for test using reflection
      *
-     * @param   mixed  $classOrInstance
-     * @param   string $name
-     * @param   array  $argument
+     * @param mixed  $classOrInstance
+     * @param string $name
+     * @param array  $argument
      * @return  mixed
      */
     protected function reflectionCall(
@@ -59,8 +60,8 @@ abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
     /**
      * Get private or protected property for test using reflection
      *
-     * @param   mixed  $classOrInstance
-     * @param   string $name
+     * @param mixed  $classOrInstance
+     * @param string $name
      * @return  mixed
      */
     protected function reflectionGet($classOrInstance, $name)
@@ -76,9 +77,9 @@ abstract class PHPUnitTestCase extends PHPUnit_Framework_TestCase
     /**
      * Set private or protected property for test using reflection
      *
-     * @param   mixed  $classOrInstance
-     * @param   string $name
-     * @param   mixed  $value
+     * @param mixed  $classOrInstance
+     * @param string $name
+     * @param mixed  $value
      */
     protected function reflectionSet($classOrInstance, $name, $value)
     {

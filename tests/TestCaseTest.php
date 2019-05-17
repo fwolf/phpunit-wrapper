@@ -1,25 +1,26 @@
 <?php
+
 namespace FwolfTest\Wrapper\PHPUnit;
 
-use Fwolf\Wrapper\PHPUnit\PHPUnitTestCase;
-use PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use Fwolf\Wrapper\PHPUnit\TestCase;
+use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
- * @copyright   Copyright 2015, 2019 Fwolf
+ * @copyright   Copyright 2015-2019 Fwolf
  * @license     http://opensource.org/licenses/MIT MIT
  */
-class PHPUnitTestCaseTest extends PHPUnitTestCase
+class TestCaseTest extends TestCase
 {
     /**
-     * @return MockObject|PHPUnitTestCase
+     * @return MockObject | TestCase
      */
     protected function buildMock()
     {
-        $mock = $this->getMock(
-            PHPUnitTestCase::class,
-            null
-        );
+        $mock = $this->getMockBuilder(TestCase::class)
+            ->setMethods(null)
+            ->getMock()
+        ;
 
         return $mock;
     }
