@@ -2,7 +2,7 @@
 
 
 
-## v2.0 (not published)
+## v2.0 (2019-05-18)
 
 - Upgrade PHP requirement to v7.2
 - Upgrade to support PHPUnit 8, not backward compatible
