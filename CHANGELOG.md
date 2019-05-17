@@ -2,6 +2,13 @@
 
 
 
+## v2.0 (not published)
+
+- Upgrade PHP requirement to v7.2
+- Upgrade to support PHPUnit 8, not backward compatible
+
+
+
 #### v1.2.1 (2016-01-11)
 
 - Disable original constructor of mock
