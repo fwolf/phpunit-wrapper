@@ -2,6 +2,12 @@
 
 
 
+#### v2.0.1 (2019-06-13)
+
+- Fix travis error
+
+
+
 ## v2.0 (2019-05-18)
 
 - Upgrade PHP requirement to v7.2
